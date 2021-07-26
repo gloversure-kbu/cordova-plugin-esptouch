@@ -50,6 +50,8 @@ NSString *callback_ID;
         [self._esptouchTask setEsptouchDelegate:esptouchDelegate];
         [self._condition unlock];
         NSArray * esptouchResultArray = [self._esptouchTask executeForResults:taskCount];
+
+        [self._esptouchTask setPackageBroadcast:true];
         
         dispatch_async(queue, ^{
             // show the result to the user in UI Main Thread
